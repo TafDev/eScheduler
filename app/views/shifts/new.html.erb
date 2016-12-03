@@ -1,0 +1,10 @@
+<div class="ui container">
+	<div class="ui form">
+		<%= form_for @shift do |f| %>
+				<%= f.date_field :date %><br><br>
+				<%= f.time_field :start %><br><br>
+				<%= f.time_field :end%><br><br>
+				<%= f.submit class: "ui teal button" %>
+		<% end %>
+	</div>
+</div>

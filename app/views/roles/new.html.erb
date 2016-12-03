@@ -1,0 +1,9 @@
+<div class="ui container">
+	<div class="ui form">
+		<%= form_for @role do |f| %>
+				<%= f.label :role %><br><br>
+				<%= f.text_field :name %><br><br>
+				<%= f.submit class: "ui teal button" %>
+		<% end %>
+	</div>
+</div>

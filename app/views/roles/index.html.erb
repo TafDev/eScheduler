@@ -1,0 +1,7 @@
+<div class="ui container">
+	<% @roles.each do |role| %>
+			<div class="ui segment">
+				<%=link_to role.name %><br>
+			</div>
+	<% end %>
+</div>

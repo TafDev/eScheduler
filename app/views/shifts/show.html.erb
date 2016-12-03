@@ -1,0 +1,9 @@
+<div class="ui container">
+	Date: <%= @shift.date %><br>
+	Shift start time: <%= @shift.start %><br>
+	Shift end time: <%= @shift.end %><br>
+	Current Attendees: <%= @shift.user_shifts.count %><br><br>
+	<%= link_to "Delete Shift", shift_path, method: :delete, class: "ui red button", data: {confirm: "Are you sure?"} %>
+	<%= link_to "Alter Shift", shift_path, class: "ui green button" %>
+	<%= link_to "Add Employees"  %>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EScheduler</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+  <div class="ui pointing menu">
+	  <%= link_to "Home", shifts_path, class: "item" %>
+	  <%= link_to "Create shift", new_shift_path, class: "item" %>
+	  <div class="right menu">
+		  <div class="item">
+			  <div class="ui transparent icon input">
+				  <input type="text" placeholder="Search...">
+				  <i class="search link icon"></i>
+			  </div>
+		  </div>
+	  </div>
+  </div>
+    <%= yield %>
+  </body>
+</html>
