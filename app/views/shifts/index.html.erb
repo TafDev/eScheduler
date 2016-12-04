@@ -1,6 +1,9 @@
 <div class="ui container">
-	<h1>Hello, Welcome </h1>
-	<table class="ui fixed single line celled table">
+	<div class="row">
+			<h1>Welcome to Scheduler </h1>
+			<%= link_to "New Shift", new_shift_path, class: "ui teal button" %>
+	</div>
+	<table class="ui fixed single line celled teal table">
 		<thead>
 			<tr>
 				<th>Date</th>
@@ -13,10 +16,10 @@
 		<tbody>
 		<% @shifts.each do |shift| %>
 		<tr>
-			<td><%= shift.date %></td>
-			<td><%= shift.start %></td>
-			<td><%= shift.end %></td>
-			<td><%= shift.user_shifts.count - 1 %></td>
+			<td><%= shift.date.strftime("%b. %d, %Y") %></td>
+			<td><%= shift.start.strftime("%I:%M%p") %></td>
+			<td><%= shift.end.strftime("%I:%M%p") %></td>
+			<td><%= shift.user_shifts.count %></td>
 			<td class="selectable"><%= link_to "Edit This", shift_path(shift) %></td>
 		</tr>
 		<% end %>

@@ -1,10 +1,22 @@
 <div class="ui container">
-	<div class="ui form">
-		<%= form_for @shift do |f| %>
-				<%= f.date_field :date %><br><br>
-				<%= f.time_field :start %><br><br>
-				<%= f.time_field :end%><br><br>
-				<%= f.submit class: "ui teal button" %>
-		<% end %>
+	<div class="ui grid">
+		<div class="six wide column">
+			<div class="ui form">
+				<%= form_for @shift do |f| %>
+						<%= f.date_field :date %><br><br>
+						<%= f.time_field :start %><br><br>
+						<%= f.time_field :end%><br>
+						<%= f.collection_check_boxes :user_ids, User.all, :id, :email, :multiple => true do |b| %><br>
+								<%= b.label class:"label-checkbox" do%>
+										<%=b.check_box + " " + b.text%>
+								<%end%>
+								<% end %>
+						<br>
+						<br>
+						<%= f.submit class: "ui teal button" %>
+				<% end %>
+			</div>
+		</div>
 	</div>
 </div>
+x

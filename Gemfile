@@ -9,7 +9,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'cancancan', '~> 1.10'
-
+gem 'figaro'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -31,13 +31,22 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'twilio-ruby'
+# Use delayed job for running background jobs
+gem 'delayed_job_active_record'
 
+# Need daemons to start delayed_job
+gem 'daemons'
+
+# Use workless to use less workers on heroku
+gem "workless", "~> 1.2.2"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+	gem 'pry-byebug'
 end
 
 group :development do
